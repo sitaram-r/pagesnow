@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Canvas Conditions </title>
+</head>
+<body>
+
+<h1>Canvas Conditions</h1>
+
+<h2>Good example: Canvas element with aria-hidden attribute</h2>
+<canvas aria-hidden="false" id="hiddenfalse" aria-label="rectangle with 200 height and 200 width" role="img" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+var c = document.getElementById("hiddenfalse");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Bad example: Canvas element with aria-hidden attribute</h2>
+<canvas aria-hidden="true" id="hiddentrue" aria-label="rectangle with 200 height and 200 width" role="img" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+var c = document.getElementById("hiddentrue");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+
+<h2>Good example: Canvas element with role and accessible name via ARIA</h2>
+<canvas id="ariarolename" aria-label="rectangle with 200 height and 200 width" role="img" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+var c = document.getElementById("ariarolename");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Bad example: Canvas element with role but missing accessible name</h2>
+<canvas id="badnamenorole" style="border:1px solid #d3d3d3;" role="img"></canvas>
+<script>
+var c = document.getElementById("badnamenorole");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Bad example: Canvas element without role and accessible name</h2>
+<canvas id="withoutariarolename" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+var c = document.getElementById("withoutariarolename");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Good example: Canvas element with role and accessible name via ARIA(aria-label)</h2>
+<canvas id="goodarialabel" aria-label="rectangle with 200 height and 200 width" role="img" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+var c = document.getElementById("goodarialabel");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Bad example: Canvas element with role and accessible name via ARIA(aria-label)</h2>
+<canvas id="badarialabel" aria-label="" role="img" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+var c = document.getElementById("badarialabel");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+
+<h2>Good example: Canvas element with role and accessible name via ARIA(aria-labelledby)</h2>
+<p id="t1">Rectangle with 200 height and 200 width</p><br>
+<canvas id="goodarialabelledby" aria-labelledby="t1" role="img" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+var c = document.getElementById("goodarialabelledby");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Bad example: Canvas element with role and accessible name via ARIA(aria-labelledby)</h2>
+<p id="t1">Rectangle with 200 height and 200 width</p><br>
+<canvas id="badarialabelledby" aria-labelledby="" role="img" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+var c = document.getElementById("badarialabelledby");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+
+<h2>Good example: Canvas element with role and accessible name via ARIA(aria-describedby)</h2>
+<p id="a1">Rectangle with 200 height and 200 width</p><br>
+<canvas id="goodariadescribedby" aria-describedby="a1" role="img" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+var c = document.getElementById("goodariadescribedby");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Bad example: Canvas element with role and accessible name via ARIA(aria-describedby)</h2>
+<p id="z">Rectangle with 200 height and 200 width</p><br>
+<canvas id="badariadescribedby" aria-describedby="" role="img" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+var c = document.getElementById("badariadescribedby");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Good example: Canvas element with role and accessible name via id association</h2>
+<p id="t1">Rectangle with 200 height and 200 width</p><br>
+<canvas id="goodidasso" aria-labelledby="t1" role="img" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+var c = document.getElementById("goodidasso");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Bad example: Canvas element with role and accessible name via inappropriate id association</h2>
+<p id="t1">Rectangle with 200 height and 200 width</p><br>
+<canvas id="badidasso" aria-labelledby="t99" role="img" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+var c = document.getElementById("badidasso");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Good example: Canvas element with accessible name via text</h2>
+<canvas id="goodnametext" style="border:1px solid #d3d3d3;">Rectangle with 200 height and 200 width</canvas>
+<script>
+var c = document.getElementById("goodnametext");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Bad example: Canvas element with accessible name via text</h2>
+<canvas id="badnametext" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+var c = document.getElementById("badnametext");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Good example: Canvas element with role via ARIA(none)</h2>
+<canvas id="goodrolenone" style="border:1px solid #d3d3d3;"><p role="none">Rectangle with 200 height and 200 width</p></canvas>
+<script>
+var c = document.getElementById("goodrolenone");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Bad example: Canvas element with role via ARIA(none)</h2>
+<canvas id="badrolenone" role="none" style="border:1px solid #d3d3d3;"><p>Rectangle with 200 height and 200 width</p></canvas>
+<script>
+var c = document.getElementById("badrolenone");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Good example: Canvas element with role via ARIA(presentation)</h2>
+<canvas id="goodrolepresent" style="border:1px solid #d3d3d3;"><p role="presentation">Rectangle with 200 height and 200 width</p></canvas>
+<script>
+var c = document.getElementById("goodrolepresent");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+<h2>Bad example: Canvas element with role via ARIA(presentation)</h2>
+<canvas id="badrolepresent" role="presentation" style="border:1px solid #d3d3d3;"><p>Rectangle with 200 height and 200 width</p></canvas>
+<script>
+var c = document.getElementById("badrolepresent");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Accessibility", 10, 50);
+</script>
+
+</body>
+</html>
+

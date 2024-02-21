@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SVG Conditions </title>
+</head>
+<body>
+
+<h1>SVG Conditions</h1>
+
+<h2>Good example: SVG element with aria-hidden</h2>
+<svg width="100" height="100" aria-hidden="false">
+<title>green circle with black border</title>
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="green" />
+</svg>
+
+<h2>Bad example: SVG element with aria-hidden</h2>
+<svg width="100" height="100" aria-hidden="true">
+<title>green circle with black border</title>
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="green" />
+</svg>
+
+<h2>Good example: SVG element with role via ARIA (none)</h2>
+<svg width="100" height="100">
+<title>Red square</title>
+  <rect width="100" height="100"
+  style="fill:red;stroke:black;stroke-width:5;" />
+</svg>
+
+<h2>Bad example: SVG element with role via ARIA (none)</h2>
+<svg role="none" width="100" height="100">
+<title>Red square</title>
+  <rect width="100" height="100"
+  style="fill:red;stroke:black;stroke-width:5;" />
+</svg>
+
+<h2>Good example: SVG element with role via ARIA (presentation)</h2>
+<svg width="100" height="100">
+<title>Blue rectangle with black border</title>
+<rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+</svg>
+
+<h2>Bad example: SVG element with role via ARIA (presentation)</h2>
+<svg role="presentation" width="100" height="100">
+<title>Blue rectangle with black border</title>
+  <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+</svg>
+
+<h2>Good example: SVG element with text</h2>
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="green" />
+  <text x="50" y="60" font-size="30" text-anchor="middle" fill="black">SVG</text>
+</svg>
+
+<h2>Bad example: SVG element with text</h2>
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="green" />
+  <text x="50" y="60" font-size="30" text-anchor="middle" fill="black"></text>
+</svg>
+
+<h2>Good example: SVG element with title</h2>
+<svg width="100" height="100">
+<title>Red rectangle with black border</title>
+  <rect width="100" height="100"
+  style="fill:red;stroke:black;stroke-width:5;" />
+</svg>
+
+<h2>Bad example: SVG element with empty title</h2>
+<svg width="100" height="100">
+<title></title>
+  <rect width="100" height="100"
+  style="fill:red;stroke:black;stroke-width:5;" />
+</svg>
+
+<h2>Bad example: SVG element without title</h2>
+<svg width="100" height="100">
+  <rect width="100" height="100"
+  style="fill:red;stroke:black;stroke-width:5;" />
+</svg>
+
+<h2>Good example: SVG element with title is first element</h2>
+<svg width="100" height="100">
+<title>Blue rectangle with black border</title>
+<rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+</svg>
+
+<h2>Bad example: SVG element with title is first element</h2>
+<svg width="100" height="100">
+<rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+  <title>Blue rectangle with black border</title>
+</svg>
+
+<h2>Good example: SVG element with role (img)</h2>
+<svg width="100" height="100" role="img">
+<title>Green circle with black border</title>
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="green" />
+</svg>
+
+<h2>Bad example: SVG element without role (img)</h2>
+<svg width="100" height="100">
+<title>Green circle with black border</title>
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="green" />
+</svg>
+
+<h2>Good example: SVG element with role (graphics-symbol)</h2>
+<svg width="100" height="100" role="graphics-symbol">
+<title>Red rectangle with black border</title>
+  <rect width="100" height="100"
+  style="fill:red;stroke:black;stroke-width:5;" />
+</svg>
+
+<h2>Bad example: SVG element without role (graphics-symbol)</h2>
+<svg width="100" height="100">
+<title>Red rectangle with black border</title>
+  <rect width="100" height="100"
+  style="fill:red;stroke:black;stroke-width:5;" />
+</svg>
+
+<h2>Good example: SVG element with aria-label</h2>
+<svg width="100" height="100" role="img" aria-label="Blue rectangle with black border">
+  <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+</svg>
+
+<h2>Bad example: SVG element with aria-label</h2>
+<svg width="100" height="100" role="img" aria-label="">
+  <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+</svg>
+
+<h2>Good example: SVG element with aria-labelledby</h2>
+<svg width="100" height="100" role="img" aria-labelledby="goodarialabelledby">
+ <title id="goodarialabelledby">Green circle with black border</title>
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="green" />
+</svg>
+
+<h2>Bad example: SVG element with no aria-labelledby</h2>
+<svg width="100" height="100" role="img">
+<title id="badrolesvg">Green circle with black border</title> 
+ <circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="green" />
+</svg>
+
+<h2>Bad example: SVG element with aria-labelledby (Incorrect value)</h2>
+<svg width="100" height="100" role="img" aria-labelledby="abc">
+<title id="greencircle">Green circle with black border</title>
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="green" />
+</svg>
+
+<h2>Good example: SVG element with aria-describedby</h2>
+<svg width="100" height="100" role="img" aria-describedby="exampleelement">
+<title id="exampleelement">Red rectangle with black border</title>
+    <rect width="100" height="100"
+  style="fill:red;stroke:black;stroke-width:5;" />
+</svg>
+
+<h2>Bad example: SVG element with no aria-describedby</h2>
+<svg width="100" height="100" role="img">
+<title id="desctesting">Red rectangle with black border</title>
+    <rect width="100" height="100"
+  style="fill:red;stroke:black;stroke-width:5;" />
+</svg>
+
+<h2>Bad example: SVG element with aria-describedby (Incorrect value)</h2>
+<svg width="100" height="100" role="img" aria-describedby="dddd">
+<title id="imagelinkbadexample">Red rectangle with black border</title>
+    <rect width="100" height="100"
+  style="fill:red;stroke:black;stroke-width:5;" />
+</svg>
+
+</body>
+</html>
+
